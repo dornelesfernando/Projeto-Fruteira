@@ -54,17 +54,20 @@
 
 <h2>Exemplo:</h2>
 
-Certo dia Fernando Dorneles de 17 anos estava decidiu comprar algumas frutas.
+<p><h3 align="center">Certo dia Fernando Dorneles de 17 anos estava decidiu comprar algumas frutas.</p></h3>
 
-Tais quais:
+<h3>Tais quais:</h3>
+
 - 1 Melancia
 - 7 Maças
 - 9 Bananas
+- 2 Abacaxi
+- 2 Mamões
 - 6 Limões
 - 8 Morangos
 - 3 kiwi
 
-<div align="center"><h3>
+</br><div align="center"><h3>
 
      — — — — — — — — — — — — — — — — — — 
     |     Cnpj: 01.234.567/0001-89      |
@@ -90,5 +93,5 @@ Tais quais:
     |  Valor a pagar: 75.48 R$          |
     |                        30/01/2023 |
      — — — — — — — — — — — — — — — — — — 
-
 <h3></div>
+<h3 align="right">@dornelesfernando</h3>
