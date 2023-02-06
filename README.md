@@ -17,7 +17,7 @@
 - Nome
 - Sobrenome
 - Idade
----
+
 </br>
 <h2>Dados necessários na notinha (em ordem)</h2>
 
@@ -39,7 +39,7 @@
             - Valor total sem descontos
             - Descontos
             - Valor a pagar
----
+
 </div></br>
 
 <div>
@@ -50,7 +50,7 @@
     *** Desconto aplcado no valor total a se pagar
 </div>
 
----
+
 
 <h2>Exemplo:</h2>
 
@@ -71,7 +71,7 @@
 
      — — — — — — — — — — — — — — — — — — 
     |     Cnpj: 01.234.567/0001-89      |
-    |          Nome da Fruteira         |
+    |       "Console.log(frutas)"       |
     |    Programação, 1000, JavaScript  |
      — — — — — — — — — — — — — — — — — —   
     |   Cliente: Fernando Dorneles      |
@@ -91,7 +91,7 @@
     |  Valor total sem descontos: 75.48 |
     |  Descontos: 00.00 R$              |
     |  Valor a pagar: 75.48 R$          |
-    |                        30/01/2023 |
+    |                        05/02/2023 |
      — — — — — — — — — — — — — — — — — — 
 <h3></div>
 <h3 align="right">@dornelesfernando</h3>
