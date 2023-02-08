@@ -29,13 +29,14 @@ const id9 = [produto9, preco9];
 const id10 = [produto10, preco10];
 
 const id = [id0, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10];
-quantidadeDeItens = ["0", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 
 /*_____________________________________________________________________________*/
+// Altere esse campo
 
-const nome = "Fernando";
-const sobrenome = "Dorneles";
-const idade = 17;
+const nome = "";  // Seu nome
+const sobrenome = "";  // Seu sobrenome
+const idade = 00;  // Sua idade
 
 // Altere a quantidade do produto para selecionar os ítens
 const escolha = [[id[0], "Qtd"],
@@ -44,19 +45,25 @@ const escolha = [[id[0], "Qtd"],
                      [id[3], 5],  // Abacaxi
                      [id[4], 0],  // Maça
                      [id[5], 0],  // Pera
-                     [id[6], 0],  // Abacate
-                     [id[7], 0],  // Uva
-                     [id[8], 0],  // Kiwi
-                     [id[9], 0],  // Ameixa
+                     [id[6], 1],  // Abacate
+                     [id[7], 2],  // Uva
+                     [id[8], 7],  // Kiwi
+                     [id[9], 9],  // Ameixa
                      [id[10], 0]];  // Manga
 
-//console.log(escolha);
+/* 
+Exemplo:
+    Se quiser 4 uvas vá até o "[id[7], 0],  // Uva" e altere o segundo valor para 4, ficando assim:
+"[id[7], 4],  // Uva".   
+*/
+
 
 /*_____________________________________________________________________________*/
 // Recolhendo os valores
 
 const nomeDosProdutoEscolhidos = [];
 const valoresDosProdutoEscolhidos = [];
+const quantidadeDosProdutosEscolhidos = [];
 let qtdAuxiliar = 0;
 let valorAuxiliar = 0;
 let qtdTotal = 0;
@@ -65,6 +72,7 @@ for (let x = 0; x < escolha.length; x++) {
         if (escolha[x][c] > 0) { 
             qtdAuxiliar = escolha[x][1]  ;
             qtdTotal = qtdTotal + qtdAuxiliar;
+            quantidadeDosProdutosEscolhidos.push(escolha[x][1]);
             nomeDosProdutoEscolhidos.push(escolha[x][0][0]);
                 for (let y = 0; y < qtdAuxiliar; y++) {
                     valorAuxiliar = valorAuxiliar + escolha[x][0][1]  
@@ -78,16 +86,8 @@ for (let x = 0; x < escolha.length; x++) {
 //console.log(qtdTotal);
 //console.log(nomeDosProdutoEscolhidos);
 //console.log(valoresDosProdutoEscolhidos);
+//console.log(quantidadeDosProdutosEscolhidos);
 
-const carrinho_de_compras = [];
-const arrayAuxiliar = [];
-    for (let x = 0; x < nomeDosProdutoEscolhidos.length && valoresDosProdutoEscolhidos.length; x++) {
-        arrayAuxiliar.push(nomeDosProdutoEscolhidos[x]);
-        arrayAuxiliar.push(valoresDosProdutoEscolhidos[x]);
-        carrinho_de_compras.push(arrayAuxiliar);
-    }
-    
-console.log(carrinho_de_compras);
 
 /*_____________________________________________________________________________*/
 // Fazeendo a soma dos valores
@@ -99,20 +99,35 @@ for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
     valor_a_ser_pago = valor_a_ser_pago + valoresDosProdutoEscolhidos[x];
     valor_sem_desconto = valor_a_ser_pago;
 }
-// console.log(valor_a_ser_pago);
+ 
+//console.log(valor_a_ser_pago);
 
 
-/*_____________________________________________________________________________
-
+/*_____________________________________________________________________________*/
 // Descontos
+
 const valorDeDescontoTotais = [];
 
-if(qtdTotal.length > 20){  // Em compras de acima de 20 unidades totais
+// Descontsos *
+
+
+
+
+// Descontos **
+
+
+
+
+// Descontos ***
+if(qtdTotal > 20){  // Em compras de acima de 20 unidades totais
     let desconto = valor_a_ser_pago * 0.15;  // Desconto de 15% no valor total
     valorDeDescontoTotais.push(desconto);
     valor_a_ser_pago = valor_a_ser_pago - (valor_a_ser_pago * 0.15);
 }
 
+//console.log(valor_a_ser_pago);
+//console.log(qtdTotal);
+//console.log(valorDeDescontoTotais);
 
 
 
@@ -122,8 +137,26 @@ let totalDeDescontos = 0;
 for (let x = 0; x < valorDeDescontoTotais.length; x++) {
     totalDeDescontos = totalDeDescontos + valorDeDescontoTotais[x];
 }
-*/
 
+console.log(totalDeDescontos);
+
+
+/*_____________________________________________________________________________
+// Adicionando tudo ao carrinho de compras
+
+const carrinho_de_compras = [];
+let arrayAuxiliar = [];
+    for (let x = 0; x < nomeDosProdutoEscolhidos.length && valoresDosProdutoEscolhidos.length; x++) {
+        arrayAuxiliar.push(nomeDosProdutoEscolhidos[x]);
+        arrayAuxiliar.push(valoresDosProdutoEscolhidos[x]);
+        arrayAuxiliar.push(quantidadeDosProdutosEscolhidos[x]);
+        carrinho_de_compras.push(arrayAuxiliar);
+        arrayAuxiliar = [];
+    }
+    
+console.log(carrinho_de_compras);
+
+*/
 
 /*_____________________________________________________________________________
 // Menu
