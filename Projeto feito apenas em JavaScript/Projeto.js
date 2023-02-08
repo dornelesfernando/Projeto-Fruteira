@@ -35,9 +35,9 @@ const id = [id0, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10];
 /*_____________________________________________________________________________*/
 // Altere esse campo
 
-const nome = "";  // Seu nome
-const sobrenome = "";  // Seu sobrenome
-const idade = 00;  // Sua idade
+const nome = "Fernando";  // Seu nome
+const sobrenome = "Dorneles";  // Seu sobrenome
+const idade = 17;  // Sua idade
 
 // Altere a quantidade do produto para selecionar os ítens
 const escolha = [[id[0], "Qtd"],
@@ -89,20 +89,11 @@ for (let x = 0; x < escolha.length; x++) {
 //console.log(valoresDosProdutoEscolhidos);
 //console.log(quantidadeDosProdutosEscolhidos);
 
-
-/*_____________________________________________________________________________*/
-// Fazeendo a soma dos valores
-
 let valor_a_ser_pago = 0;
-let valor_sem_desconto = 0;
 
 for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
     valor_a_ser_pago = valor_a_ser_pago + valoresDosProdutoEscolhidos[x];
-    valor_sem_desconto = valor_a_ser_pago;
 }
- 
-//console.log(valor_a_ser_pago);
-
 
 /*_____________________________________________________________________________*/
 // Descontos
@@ -196,6 +187,18 @@ for (let x = 0; x < valorDeDescontoTotais.length; x++) {
 
 
 /*_____________________________________________________________________________*/
+// Fazeendo a soma dos valores
+
+ valor_a_ser_pago = 0;
+
+for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
+    valor_a_ser_pago = valor_a_ser_pago + valoresDosProdutoEscolhidos[x];
+}
+ 
+//console.log(valor_a_ser_pago);
+
+
+/*_____________________________________________________________________________*/
 // Adicionando tudo ao carrinho de compras
 
 const carrinho_de_compras = [];
@@ -212,7 +215,7 @@ let arrayAuxiliar = [];
 //console.log(carrinho_de_compras);
 
 
-/*_____________________________________________________________________________
+/*_____________________________________________________________________________*/
 // Menu
 
 // Decoração 
@@ -225,7 +228,9 @@ const endereco = "Programação, 1000, JavaScript";
 
 const cliente = cadastroDePessoa(nome, sobrenome, idade);
 
-// console.log(carrinho_de_compras[0][0]);
+const valor_sem_desconto = totalDeDescontos + valor_a_ser_pago;
+
+
 console.log(detalhe);
 console.log(`|     Cnpj: ${cnpj}      |`);
 console.log(`|       ${loja}       |`);
@@ -235,14 +240,13 @@ console.log(`|   Cliente: ${cliente.sobrenome} ${cliente.nome}      |`);
 console.log(`|   Idade: ${cliente.idade} anos                  |`);
 console.log(detalhe);
 console.log(`|Nome do produto  Qtd  Valor  Desc  |`);
-for (let x = 0; x < idRetornado.length; x++) {
-    console.log(`| ${carrinho_de_compras[x][0]}             ${carrinho_de_compras[x][1].toFixed(2)}         |`)   
+for (let x = 0; x < carrinho_de_compras.length; x++) {
+    console.log(`| ${carrinho_de_compras[x][0]}         ${carrinho_de_compras[x][2]}   ${carrinho_de_compras[x][1].toFixed(2)}  ${carrinho_de_compras[x][3].toFixed(2)}  |`)   
 }
 console.log(detalhe);
 console.log(`| Quantidade total de produtos: ${qtdTotal}  |`);
 console.log(`| Valor sem descontos: ${valor_sem_desconto.toFixed(2)}       |`);
 console.log(`| Descontos: ${totalDeDescontos.toFixed(2)} R$               |`);
-console.log(`| Valor a pagar: ${valor_a_ser_pago} R$           |`);
-console.log(`|                        24/01/2023 |`)
+console.log(`| Valor a pagar: ${valor_a_ser_pago.toFixed(2)} R$          |`);
+console.log(`|                        08/02/2023 |`)
 console.log(detalhe);
-*/
