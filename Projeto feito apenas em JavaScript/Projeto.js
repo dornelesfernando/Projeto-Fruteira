@@ -1,10 +1,11 @@
 function cadastroDePessoa(nome, sobrenome, idade) {
     return{nome, sobrenome, idade};
 }
+
+
 /*_____________________________________________________________________________*/
-
-
 // Catalogo
+
 const produto1 = "Melancia", preco1 = 15;
 const produto2 = "Banana  ", preco2 = 5;
 const produto3 = "Abacaxi ", preco3 = 7;
@@ -40,16 +41,16 @@ const idade = 00;  // Sua idade
 
 // Altere a quantidade do produto para selecionar os ítens
 const escolha = [[id[0], "Qtd"],
-                     [id[1], 3],  // Melancia
+                     [id[1], 2],  // Melancia
                      [id[2], 2],  // Banana
-                     [id[3], 5],  // Abacaxi
-                     [id[4], 0],  // Maça
-                     [id[5], 0],  // Pera
-                     [id[6], 1],  // Abacate
-                     [id[7], 2],  // Uva
-                     [id[8], 7],  // Kiwi
-                     [id[9], 9],  // Ameixa
-                     [id[10], 0]];  // Manga
+                     [id[3], 3],  // Abacaxi
+                     [id[4], 7],  // Maça
+                     [id[5], 5],  // Pera
+                     [id[6], 6],  // Abacate
+                     [id[7], 8],  // Uva
+                     [id[8], 9],  // Kiwi
+                     [id[9], 1],  // Ameixa
+                     [id[10], 2]];  // Manga
 
 /* 
 Exemplo:
@@ -105,23 +106,78 @@ for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
 
 /*_____________________________________________________________________________*/
 // Descontos
+// Essa parte é alterada manualmente
 
+const descontosDosProdutosEscolhidos = [];
 const valorDeDescontoTotais = [];
-
-// Descontsos *
-
-
-
+let descontoAuxiliar = 0;
+let diferençaAuxiliar = 0;
+let auxiliarDeMundanca = 0;
+let novoValor = 0;
+let qtdParaDescontoAuxiliar = 0;
+const produtosEmPromoção = ["Melancia", "Manga   ", "Maça    ", "Uva     "];
 
 // Descontos **
+for (let x = 0; x < nomeDosProdutoEscolhidos.length; x++){
+    if(nomeDosProdutoEscolhidos[x] === produtosEmPromoção[0]){
+        descontoAuxiliar = valoresDosProdutoEscolhidos[x] * 0.25;
+        valorDeDescontoTotais.push(descontoAuxiliar);
+        descontosDosProdutosEscolhidos.push(descontoAuxiliar);
+        valoresDosProdutoEscolhidos[x]  = valoresDosProdutoEscolhidos[x] - (valoresDosProdutoEscolhidos[x] * 0.25); 
+        descontoAuxiliar = 0;
+    }
+    if(nomeDosProdutoEscolhidos[x] === produtosEmPromoção[1]){
+        descontoAuxiliar = valoresDosProdutoEscolhidos[x] * 0.10;
+        valorDeDescontoTotais.push(descontoAuxiliar);
+        descontosDosProdutosEscolhidos.push(descontoAuxiliar);
+        valoresDosProdutoEscolhidos[x]  = valoresDosProdutoEscolhidos[x] - (valoresDosProdutoEscolhidos[x] * 0.10);
+        descontoAuxiliar = 0;
+    }
+    if(nomeDosProdutoEscolhidos[x] !== produtosEmPromoção[0] && nomeDosProdutoEscolhidos[x] !== produtosEmPromoção[1]){
+        descontosDosProdutosEscolhidos.push(0);
+    }
+}
+//console.log(valorDeDescontoTotais);
 
 
+// Descontsos *
+for (let x = 0; x < nomeDosProdutoEscolhidos.length; x++) {
+    
+    qtdParaDescontoAuxiliar = 5;
+    if (quantidadeDosProdutosEscolhidos[x] > qtdParaDescontoAuxiliar && nomeDosProdutoEscolhidos[x] === produtosEmPromoção[2]) {
+        novoValor = id[4][1] - (id[4][1] * 0.05);
+        diferença = quantidadeDosProdutosEscolhidos[x] - qtdParaDescontoAuxiliar;
+        auxiliarDeMundanca = valoresDosProdutoEscolhidos[x] - (id[4][1] * diferença);
+        auxiliarDeMundanca = auxiliarDeMundanca + (novoValor * diferença);
+        valoresDosProdutoEscolhidos[x] = auxiliarDeMundanca;
+        novoValor = 0;
+        descontoAuxiliar = (id[4][1] * 0.05) * diferença;
+        valorDeDescontoTotais.push(descontoAuxiliar);
+        descontosDosProdutosEscolhidos[x] = descontosDosProdutosEscolhidos[x] + descontoAuxiliar; 
+        descontoAuxiliar = 0;      
+    }
+
+    qtdParaDescontoAuxiliar = 6;
+    if (quantidadeDosProdutosEscolhidos[x] > qtdParaDescontoAuxiliar && nomeDosProdutoEscolhidos[x] === produtosEmPromoção[3]) {
+        novoValor = id[7][1] - (id[7][1] * 0.07);
+        diferença = quantidadeDosProdutosEscolhidos[x] - qtdParaDescontoAuxiliar;
+        auxiliarDeMundanca = valoresDosProdutoEscolhidos[x] - (id[7][1] * diferença);
+        auxiliarDeMundanca = auxiliarDeMundanca + (novoValor * diferença);
+        valoresDosProdutoEscolhidos[x] = auxiliarDeMundanca;
+        novoValor = 0;
+        descontoAuxiliar = (id[7][1] * 0.05) * diferença;
+        valorDeDescontoTotais.push(descontoAuxiliar);
+        descontosDosProdutosEscolhidos[x] = descontosDosProdutosEscolhidos[x] + descontoAuxiliar; 
+        descontoAuxiliar = 0;      
+    }
+}
+//console.log(descontosDosProdutosEscolhidos);
 
 
 // Descontos ***
 if(qtdTotal > 20){  // Em compras de acima de 20 unidades totais
-    let desconto = valor_a_ser_pago * 0.15;  // Desconto de 15% no valor total
-    valorDeDescontoTotais.push(desconto);
+    descontoAuxiliar = valor_a_ser_pago * 0.15;  // Desconto de 15% no valor total
+    valorDeDescontoTotais.push(descontoAuxiliar);
     valor_a_ser_pago = valor_a_ser_pago - (valor_a_ser_pago * 0.15);
 }
 
@@ -130,18 +186,16 @@ if(qtdTotal > 20){  // Em compras de acima de 20 unidades totais
 //console.log(valorDeDescontoTotais);
 
 
-
-
 // Soma dos descontos
 let totalDeDescontos = 0;
 for (let x = 0; x < valorDeDescontoTotais.length; x++) {
     totalDeDescontos = totalDeDescontos + valorDeDescontoTotais[x];
 }
 
-console.log(totalDeDescontos);
+//console.log(totalDeDescontos);
 
 
-/*_____________________________________________________________________________
+/*_____________________________________________________________________________*/
 // Adicionando tudo ao carrinho de compras
 
 const carrinho_de_compras = [];
@@ -150,13 +204,13 @@ let arrayAuxiliar = [];
         arrayAuxiliar.push(nomeDosProdutoEscolhidos[x]);
         arrayAuxiliar.push(valoresDosProdutoEscolhidos[x]);
         arrayAuxiliar.push(quantidadeDosProdutosEscolhidos[x]);
+        arrayAuxiliar.push(descontosDosProdutosEscolhidos[x]);
         carrinho_de_compras.push(arrayAuxiliar);
         arrayAuxiliar = [];
     }
     
-console.log(carrinho_de_compras);
+//console.log(carrinho_de_compras);
 
-*/
 
 /*_____________________________________________________________________________
 // Menu
