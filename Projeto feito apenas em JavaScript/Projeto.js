@@ -42,15 +42,15 @@ const idade = 17;  // Sua idade
 // Altere a quantidade do produto para selecionar os ítens
 const escolha = [[id[0], "Qtd"],
                      [id[1], 2],  // Melancia
-                     [id[2], 2],  // Banana
-                     [id[3], 3],  // Abacaxi
+                     [id[2], 5],  // Banana
+                     [id[3], 6],  // Abacaxi
                      [id[4], 7],  // Maça
                      [id[5], 5],  // Pera
                      [id[6], 6],  // Abacate
-                     [id[7], 8],  // Uva
-                     [id[8], 9],  // Kiwi
+                     [id[7], 9],  // Uva
+                     [id[8], 12],  // Kiwi
                      [id[9], 1],  // Ameixa
-                     [id[10], 2]];  // Manga
+                     [id[10], 3]];  // Manga
 
 /* 
 Exemplo:
@@ -89,11 +89,6 @@ for (let x = 0; x < escolha.length; x++) {
 //console.log(valoresDosProdutoEscolhidos);
 //console.log(quantidadeDosProdutosEscolhidos);
 
-let valor_a_ser_pago = 0;
-
-for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
-    valor_a_ser_pago = valor_a_ser_pago + valoresDosProdutoEscolhidos[x];
-}
 
 /*_____________________________________________________________________________*/
 // Descontos
@@ -162,7 +157,16 @@ for (let x = 0; x < nomeDosProdutoEscolhidos.length; x++) {
         descontoAuxiliar = 0;      
     }
 }
+
+
+//----------------------------------------------
 //console.log(descontosDosProdutosEscolhidos);
+let valor_a_ser_pago = 0;
+for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
+    valor_a_ser_pago = valor_a_ser_pago + valoresDosProdutoEscolhidos[x];
+}
+//console.log(valor_a_ser_pago);
+//----------------------------------------------
 
 
 // Descontos ***
@@ -170,6 +174,7 @@ if(qtdTotal > 20){  // Em compras de acima de 20 unidades totais
     descontoAuxiliar = valor_a_ser_pago * 0.15;  // Desconto de 15% no valor total
     valorDeDescontoTotais.push(descontoAuxiliar);
     valor_a_ser_pago = valor_a_ser_pago - (valor_a_ser_pago * 0.15);
+    descontoAuxiliar = 0;
 }
 
 //console.log(valor_a_ser_pago);
@@ -184,18 +189,6 @@ for (let x = 0; x < valorDeDescontoTotais.length; x++) {
 }
 
 //console.log(totalDeDescontos);
-
-
-/*_____________________________________________________________________________*/
-// Fazeendo a soma dos valores
-
- valor_a_ser_pago = 0;
-
-for (let x = 0; x < valoresDosProdutoEscolhidos.length; x++) {
-    valor_a_ser_pago = valor_a_ser_pago + valoresDosProdutoEscolhidos[x];
-}
- 
-//console.log(valor_a_ser_pago);
 
 
 /*_____________________________________________________________________________*/
