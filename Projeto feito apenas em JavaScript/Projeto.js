@@ -35,9 +35,9 @@ const id = [id0, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10];
 /*_____________________________________________________________________________*/
 // Altere esse campo
 
-const nome = "Fernando";  // Seu nome
-const sobrenome = "Dorneles";  // Seu sobrenome
-const idade = 17;  // Sua idade
+const nome = "";  // Seu nome
+const sobrenome = "";  // Seu sobrenome
+const idade = 00;  // Sua idade
 
 // Altere a quantidade do produto para selecionar os ítens
 const escolha = [[id[0], "Qtd"],
@@ -55,7 +55,7 @@ const escolha = [[id[0], "Qtd"],
 /* 
 Exemplo:
     Se quiser 4 uvas vá até o "[id[7], 0],  // Uva" e altere o segundo valor para 4, ficando assim:
-"[id[7], 4],  // Uva".   
+"[id[7], 4],  // Uva".  
 */
 
 
@@ -241,5 +241,6 @@ console.log(`| Quantidade total de produtos: ${qtdTotal}  |`);
 console.log(`| Valor sem descontos: ${valor_sem_desconto.toFixed(2)}       |`);
 console.log(`| Descontos: ${totalDeDescontos.toFixed(2)} R$               |`);
 console.log(`| Valor a pagar: ${valor_a_ser_pago.toFixed(2)} R$          |`);
-console.log(`|                        08/02/2023 |`)
+const date = new Date();
+console.log(`|                   ${date.toDateString()} |`)
 console.log(detalhe);
