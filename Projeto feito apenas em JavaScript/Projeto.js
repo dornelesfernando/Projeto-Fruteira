@@ -41,16 +41,16 @@ const idade = 17;  // Sua idade
 
 // Altere a quantidade do produto para selecionar os ítens
 const escolha = [[id[0], "Qtd"],
-                     [id[1], 2],  // Melancia
-                     [id[2], 5],  // Banana
-                     [id[3], 6],  // Abacaxi
-                     [id[4], 7],  // Maça
-                     [id[5], 5],  // Pera
-                     [id[6], 6],  // Abacate
-                     [id[7], 9],  // Uva
-                     [id[8], 12],  // Kiwi
-                     [id[9], 1],  // Ameixa
-                     [id[10], 3]];  // Manga
+                     [id[1], 0],  // Melancia
+                     [id[2], 0],  // Banana
+                     [id[3], 0],  // Abacaxi
+                     [id[4], 0],  // Maça
+                     [id[5], 0],  // Pera
+                     [id[6], 0],  // Abacate
+                     [id[7], 0],  // Uva
+                     [id[8], 0],  // Kiwi
+                     [id[9], 0],  // Ameixa
+                     [id[10], 0]];  // Manga
 
 /* 
 Exemplo:
